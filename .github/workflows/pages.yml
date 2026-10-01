@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Pages activation trigger: 2026-10-01
+# Custom-domain deployment refresh: 2026-10-02
 
 permissions:
   contents: read
