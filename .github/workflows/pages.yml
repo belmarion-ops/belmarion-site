@@ -5,6 +5,8 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Pages activation trigger: 2026-10-01
+
 permissions:
   contents: read
   pages: write
