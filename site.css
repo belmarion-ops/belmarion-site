@@ -9,3 +9,8 @@
 .eyebrow{margin-bottom:28px;color:var(--muted);font-size:11px;line-height:17px;letter-spacing:.18em}.page h1{font-size:clamp(22px,4vw,34px);line-height:1.35;letter-spacing:.12em;margin-bottom:28px}.page p:not(.eyebrow){font-size:16px;line-height:1.6;letter-spacing:.01em;margin-bottom:22px;max-width:680px;overflow-wrap:break-word}.privacy-page h2{font-size:14px;line-height:21px;letter-spacing:.12em;color:var(--quiet);margin:28px 0 12px}.page .contact{margin-top:12px!important;letter-spacing:.02em!important}
 .return{align-self:flex-end;margin-top:auto;padding:20px 0 4px;font-size:14px;line-height:22px;letter-spacing:.12em;min-height:48px;color:var(--quiet)}.statutory{font-size:11px;line-height:18px;letter-spacing:.03em;color:var(--muted);padding:24px 0 0}
 @media(max-width:370px){.name{font-size:30px;letter-spacing:.14em}.calibrate{font-size:11px;letter-spacing:.12em}}
+
+
+/* 2.1.8: readable copy at narrow and enlarged-text viewports. */
+.page-inner{max-width:64ch;margin-inline:auto}.page p:not(.eyebrow){max-width:62ch;line-height:1.7;margin-bottom:26px}.privacy-page h2{margin-top:36px}.page h1{overflow-wrap:anywhere}.menu a{padding-block:14px}.return{margin-top:32px;flex-shrink:0}.statutory{max-width:48ch;text-align:center;line-height:1.8}
+@media(max-width:370px){.page,.home{padding-inline:max(20px,env(safe-area-inset-left))}.page p:not(.eyebrow){font-size:16px}.name{font-size:28px;letter-spacing:.12em}}
