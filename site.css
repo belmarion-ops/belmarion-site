@@ -8,3 +8,18 @@
 
 /* Cinematic introduction: opt-in playback, responsive layout, native accessible controls. */
 .film-intro{width:min(100%,720px);margin:38px auto 4px}.film-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px}.film-heading h2,.film-heading span{margin:0;color:var(--muted);font:400 10px/18px var(--mono);letter-spacing:.17em}.film-player{display:block;width:100%;aspect-ratio:16/9;background:#070707;object-fit:contain;border:1px solid #3c3c3c;border-radius:2px}.film-player:focus-visible{outline:1px solid var(--white);outline-offset:5px}.film-intro+.menu{margin-top:22px}@media(max-width:480px){.film-intro{margin-top:32px}.film-heading h2,.film-heading span{font-size:9px}}
+
+/* Homepage statutory footer: quietly presented without sacrificing legal particulars. */
+.home > .statutory{
+  width:100%;
+  max-width:80ch;
+  padding:42px 0 4px;
+  color:#888885;
+  font:400 9px/1.65 var(--mono);
+  letter-spacing:.025em;
+  text-align:center;
+  overflow-wrap:break-word;
+}
+@media (max-width:480px){
+  .home > .statutory{padding-top:38px;font-size:9px;line-height:1.6;letter-spacing:.01em}
+}
