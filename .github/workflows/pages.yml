@@ -27,6 +27,11 @@ jobs:
         uses: actions/checkout@v6
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Generate cinematic film poster
+        run: |
+          # Opening frame of the approved film: the smiling man's face.
+          ffmpeg -hide_banner -loglevel error -y -i assets/introducing-belmarion-web.mp4 -frames:v 1 -q:v 3 assets/introducing-belmarion-poster.jpg
+          test -s assets/introducing-belmarion-poster.jpg
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
