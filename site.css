@@ -5,3 +5,6 @@
 @media(max-width:370px){.home,.page{padding-left:calc(20px + var(--safe-left));padding-right:calc(20px + var(--safe-right))}.name{font-size:28px;letter-spacing:.12em}.calibrate{font-size:11px;letter-spacing:.12em}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
 .page .note{font-size:13px!important;line-height:1.6!important;color:var(--muted)!important;font-style:italic}.menu a{max-width:100%;overflow-wrap:break-word}.home,.page{min-height:100dvh}.page-inner{min-height:calc(100dvh - 56px - var(--safe-top) - var(--safe-bottom))}
+
+/* Cinematic introduction: opt-in playback, responsive layout, native accessible controls. */
+.film-intro{width:min(100%,720px);margin:38px auto 4px}.film-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px}.film-heading h2,.film-heading span{margin:0;color:var(--muted);font:400 10px/18px var(--mono);letter-spacing:.17em}.film-player{display:block;width:100%;aspect-ratio:16/9;background:#070707;object-fit:contain;border:1px solid #3c3c3c;border-radius:2px}.film-player:focus-visible{outline:1px solid var(--white);outline-offset:5px}.film-intro+.menu{margin-top:22px}@media(max-width:480px){.film-intro{margin-top:32px}.film-heading h2,.film-heading span{font-size:9px}}
