@@ -15,8 +15,8 @@
       "purpose": "any"
     },
     {
-      "src": "./icon-maskable.png?v=20261011-adaptive-1",
-      "sizes": "1254x1254",
+      "src": "./icon-maskable-v2.png?v=20261011-adaptive-2",
+      "sizes": "1280x1280",
       "type": "image/png",
       "purpose": "maskable"
     }
