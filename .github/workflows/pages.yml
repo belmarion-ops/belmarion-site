@@ -8,7 +8,7 @@ on:
 # Custom-domain deployment refresh: 2026-10-02
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -31,6 +31,26 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
+      - name: Verify and ingest approved Purpose film
+        shell: bash
+        run: |
+          set -euo pipefail
+          if test ! -s assets/purpose-discovery-film.mp4; then
+            test "$(find assets/_purpose-film-stage -type f -name 'part-*.b64' | wc -l)" -eq 17
+            cat assets/_purpose-film-stage/part-*.b64 | base64 --decode > /tmp/purpose-discovery-film.mp4
+            echo "0d5798136c8fd07f06fa2d572a7033b003ef62ad2105892cc421b0adb0d665c8  /tmp/purpose-discovery-film.mp4" | sha256sum --check --status
+            test "$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nw=1:nk=1 /tmp/purpose-discovery-film.mp4)" = "h264"
+            test "$(ffprobe -v error -select_streams a:0 -show_entries stream=codec_name -of default=nw=1:nk=1 /tmp/purpose-discovery-film.mp4)" = "aac"
+            mv /tmp/purpose-discovery-film.mp4 assets/purpose-discovery-film.mp4
+            ffmpeg -hide_banner -loglevel error -y -ss 17 -i assets/purpose-discovery-film.mp4 -frames:v 1 -q:v 4 assets/purpose-discovery-poster.jpg
+            test -s assets/purpose-discovery-poster.jpg
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git rm -r assets/_purpose-film-stage
+            git add assets/purpose-discovery-film.mp4 assets/purpose-discovery-poster.jpg
+            git commit -m "Store clean Purpose film and cinematic poster"
+            git push origin HEAD:main
+          fi
       - name: Generate cinematic film poster
         run: |
           # Opening frame of the approved film: the smiling man's face.
