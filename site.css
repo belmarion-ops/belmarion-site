@@ -95,3 +95,9 @@
 .privacy-page h2{margin:38px 0 17px;padding:31px 0 0;border-top:1px solid #302b23;font:400 11px/1.75 var(--mono);letter-spacing:.16em;color:#c4b797}
 .privacy-page p{max-width:64ch}
 @media(max-width:560px){.editorial-credentials{grid-template-columns:minmax(0,1fr);gap:22px}.editorial-page .editorial-hero{padding-bottom:34px;margin-bottom:36px}.editorial-section{margin-top:31px;padding-top:30px}.contact-form{gap:21px}.contact-form .form-submit{width:100%}}
+
+/* Approved gold emblem and first-position membership link. */
+.brand-emblem{display:block;width:clamp(176px,24vw,250px);height:auto;aspect-ratio:1;object-fit:contain;margin:2px 0 28px}
+.menu a.founding-option{flex-direction:column;gap:7px;color:var(--ivory);padding-top:16px;padding-bottom:18px}
+.menu .founding-option strong{font-weight:700}
+.menu .founding-option span{font-weight:400;font-size:12px;line-height:18px;letter-spacing:.04em;color:var(--quiet)}
