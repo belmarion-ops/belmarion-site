@@ -28,12 +28,14 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Install image extraction dependency if missing
+        if: hashFiles('assets/introducing-belmarion-poster.jpg') == ''
         run: |
           if ! command -v ffmpeg >/dev/null 2>&1; then
             sudo apt-get update -qq
             sudo apt-get install -y -qq ffmpeg
           fi
       - name: Generate cinematic film poster
+        if: hashFiles('assets/introducing-belmarion-poster.jpg') == ''
         run: |
           # Opening frame of the approved film: the smiling man's face.
           ffmpeg -hide_banner -loglevel error -y -i assets/introducing-belmarion-web.mp4 -frames:v 1 -q:v 3 assets/introducing-belmarion-poster.jpg
