@@ -5,6 +5,10 @@
   const status=document.getElementById("enquiry-status");
   const button=document.getElementById("enquiry-submit");
   const openedAt=Date.now();
+  // The PWA supplies only the category; no seat reference is placed in the URL.
+  if(new URLSearchParams(location.search).get("topic")==="support") {
+    document.getElementById("contact-topic").value="Support request";
+  }
   const endpoint="https://nxjqyijykcnxlwoxanrb.supabase.co/functions/v1/belmarion-public-contact";
   const feedback=(message,error=false)=>{
     status.textContent=message;
