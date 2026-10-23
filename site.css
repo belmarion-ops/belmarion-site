@@ -101,3 +101,7 @@
 .menu a.founding-option{flex-direction:column;gap:7px;color:var(--ivory);padding-top:16px;padding-bottom:18px}
 .menu .founding-option strong{font-weight:700}
 .menu .founding-option span{font-weight:400;font-size:12px;line-height:18px;letter-spacing:.04em;color:var(--quiet)}
+
+/* Supplied membership artwork: preserve the full image at every viewport size. */
+.membership-platforms{width:min(100%,720px);margin:32px auto 0}
+.membership-platforms img{display:block;width:100%;height:auto}
