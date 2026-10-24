@@ -8,11 +8,12 @@ from pathlib import Path
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/'assets/brand/favicon-512-rhodium-metals-20261024.png'
-TAG='android-adaptive-v3-20261024'
+TAG='android-adaptive-v4-20261024'
 source=Image.open(SOURCE).convert('RGBA')
 # Preserve the full supplied raster. Its motif already occupies 84% of this
 # square, so scale the whole export to make that motif 64/108 of a native layer.
-ratio=(64/108)/.84
+ratio=(64/108)/.84 * .92
+# 8% extra breathing room within Android's circular adaptive mask.
 for size in (192,512):
     extent=round(size*ratio)
     mark=source.resize((extent,extent),Image.Resampling.LANCZOS)
