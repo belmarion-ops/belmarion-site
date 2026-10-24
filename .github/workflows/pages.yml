@@ -40,6 +40,27 @@ jobs:
           # Opening frame of the approved film: the smiling man's face.
           ffmpeg -hide_banner -loglevel error -y -i assets/introducing-belmarion-web.mp4 -frames:v 1 -q:v 3 assets/introducing-belmarion-poster.jpg
           test -s assets/introducing-belmarion-poster.jpg
+      - name: Generate padded Android Chrome shortcut assets (v4)
+        run: |
+          python -m pip install --quiet Pillow
+          python ops/assets/build-android-website-shortcut.py
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root = Path('.')
+          old = 'android-adaptive-v3-20261024'
+          new = 'android-adaptive-v4-20261024'
+          old_manifest = root / f'site-{old}.webmanifest'
+          manifest = json.loads(old_manifest.read_text())
+          for icon in manifest['icons']:
+              icon['src'] = icon['src'].replace(old, new)
+          (root / f'site-{new}.webmanifest').write_text(json.dumps(manifest, indent=2) + '\\n')
+          for page in root.glob('*.html'):
+              contents = page.read_text()
+              if old in contents:
+                  page.write_text(contents.replace(old, new))
+          assert all((root / icon['src'].removeprefix('./')).is_file() for icon in manifest['icons'])
+          PY
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
