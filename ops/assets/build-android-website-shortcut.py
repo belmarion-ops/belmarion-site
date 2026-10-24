@@ -1,27 +1,24 @@
-"""Export the public website's Android bookmark separately from its favicon.
+"""Android Chrome pinned-shortcut export; approved iOS assets stay unchanged.
 
-The website opens in a browser; it is not the installed membership PWA.
-Do not advertise its ordinary favicon as an adaptive/maskable foreground.
-The approved iOS Apple touch icon and installed PWA/APK exports stay intact.
+Pixel QA established that a raw web maskable bitmap is used as a native
+adaptive foreground for browser shortcuts. Native 108dp geometry is required.
+An ordinary transparent bitmap invokes a white legacy wrapper and is unsuitable.
 """
 from pathlib import Path
-from PIL import Image, ImageDraw
-
-ROOT = Path(__file__).resolve().parents[2]
-SOURCE = ROOT / 'assets/brand/favicon-512-rhodium-metals-20261024.png'
-TAG = 'android-shortcut-v2-20261024'
-
-# The existing export's full motif is 84% high. This centered 504px crop
-# gives an optical ring diameter of 82%, matching the photographed Android
-# PWA/APK (about 72px inside an 88px launcher body). Keep the metallic pixels.
-source = Image.open(SOURCE).convert('RGBA').crop((4, 4, 508, 508))
-for size in (192, 512):
-    icon = source.resize((size, size), Image.Resampling.LANCZOS)
-    # An ordinary round bitmap is recognized by the launcher without being
-    # recropped as a 108dp adaptive foreground. Supersample the outer alpha.
-    mask = Image.new('L', (size * 4, size * 4), 0)
-    ImageDraw.Draw(mask).ellipse((0, 0, size * 4 - 1, size * 4 - 1), fill=255)
-    icon.putalpha(mask.resize((size, size), Image.Resampling.LANCZOS))
-    target = ROOT / f'assets/brand/shortcut-rhodium-{size}-{TAG}.png'
-    icon.save(target, optimize=True)
+from PIL import Image
+ROOT=Path(__file__).resolve().parents[2]
+SOURCE=ROOT/'assets/brand/favicon-512-rhodium-metals-20261024.png'
+TAG='android-adaptive-v3-20261024'
+source=Image.open(SOURCE).convert('RGBA')
+# Preserve the full supplied raster. Its motif already occupies 84% of this
+# square, so scale the whole export to make that motif 64/108 of a native layer.
+ratio=(64/108)/.84
+for size in (192,512):
+    extent=round(size*ratio)
+    mark=source.resize((extent,extent),Image.Resampling.LANCZOS)
+    icon=Image.new('RGBA',(size,size),(28,28,28,255))
+    icon.alpha_composite(mark,((size-extent)//2,(size-extent)//2))
+    icon=icon.convert('RGB')
+    target=ROOT/f'assets/brand/shortcut-rhodium-{size}-{TAG}.png'
+    icon.save(target,optimize=True)
     print(target.name)
