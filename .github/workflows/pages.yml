@@ -54,7 +54,7 @@ jobs:
           manifest = json.loads(old_manifest.read_text())
           for icon in manifest['icons']:
               icon['src'] = icon['src'].replace(old, new)
-          (root / f'site-{new}.webmanifest').write_text(json.dumps(manifest, indent=2) + '\\n')
+          (root / f'site-{new}.webmanifest').write_text(json.dumps(manifest, indent=2) + chr(10))
           for page in root.glob('*.html'):
               contents = page.read_text()
               if old in contents:
