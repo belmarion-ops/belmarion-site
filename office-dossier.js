@@ -16,7 +16,14 @@
   document.getElementById('vector-title').textContent=r.title;
   const url=endpoint+'?t='+encodeURIComponent(token);
   document.getElementById('open-pdf').href=url;
-  document.getElementById('pdf').src=url;
+  const reader=document.getElementById('reader');
+  if(result.dossier?.pages){
+   for(const blocks of result.dossier.pages){
+    const article=document.createElement('article');
+    for(const block of blocks){const el=document.createElement(block.kind==='title'?'h2':block.kind==='heading'?'h3':'p');el.textContent=block.text;article.appendChild(el);}
+    reader.appendChild(article);
+   }
+  }else{const note=document.createElement('p');note.textContent='Use OPEN PDF above to read the original arrangement instructions.';reader.appendChild(note);}
   document.getElementById('content').hidden=false;status.hidden=true;
  }catch{status.textContent='These arrangement details are unavailable or the private link has expired. Reopen the handover email, retry, or contact Belmarion.';}
 })();
