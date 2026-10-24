@@ -12,12 +12,13 @@
   const message=(text,kind='info')=>{
     status.hidden=false;
     status.textContent=text;
-    status.style.color=kind==='error'?'#8b3c35':'#4c4a45';
+    status.style.color=kind==='error'?'#f2b4a8':'#c6c2b9';
   };
   const showSuccess=()=>{
     form.hidden=true; error.hidden=true;
-    heading.textContent='Receipt acknowledged';
-    detail.textContent='Thank you. Receipt of the private working brief has been securely recorded. No booking or further arrangement has been authorised.';
+    heading.textContent='Acknowledgement Received.';
+    detail.textContent='Thank you for confirming handover.';
+    document.getElementById('close-page').hidden=false;
     status.hidden=true;
     button.disabled=false;
     window.history.replaceState(null,'',window.location.pathname);
@@ -25,7 +26,7 @@
   const showFailure=()=>{
     button.disabled=false;
     button.textContent='TRY AGAIN';
-    message('We could not confirm the result. Please try again, or contact BELMARION for assistance.','error');
+    message('We could not confirm the result. Please try again, or contact Belmarion for assistance.','error');
   };
   const requestStatus=async()=>{
     const u=endpoint+'?receipt_status=1&t='+encodeURIComponent(token);
@@ -55,7 +56,7 @@
     button.disabled=true;
     button.textContent='CONFIRMING RECEIPT…';
     error.hidden=true;
-    message('Checking confirmation with BELMARION…');
+    message('Checking confirmation with Belmarion…');
     try{
       const res=await fetch(endpoint,{
         method:'POST',
@@ -77,3 +78,4 @@
     }
   });
 })();
+
