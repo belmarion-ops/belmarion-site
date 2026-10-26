@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050504">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="description" content="A private introduction to Belmarion. Respond discreetly, in your own time.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Belmarion | A Private Introduction">
+  <meta property="og:description" content="Someone thought this might be of interest to you. Discover more, privately.">
+  <meta property="og:image" content="https://belmarion.com/assets/brand/belmarion-gold-on-black-b6eaf61e0b.jpg">
+  <meta property="og:site_name" content="Belmarion">
+  <meta name="twitter:card" content="summary">
+  <title>A Private Introduction | Belmarion</title>
+  <link rel="icon" href="/favicon.ico">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src https://nxjqyijykcnxlwoxanrb.supabase.co; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <style>
+    :root{color-scheme:dark;--gold:#E3D6AF;--gold-deep:#A99A75;--text:#F1EEE6;--muted:#AAA69E;--dim:#827E75;--line:#3D372C;--canvas:#050504;--panel:#0E0D0B;--field:#191713;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--canvas);color:var(--text)}
+    body{font-family:var(--sans);min-height:100dvh;background:radial-gradient(ellipse 90% 45% at 50% 3%,#242016 0%,#0B0A07 41%,var(--canvas) 100%);padding:calc(21px + env(safe-area-inset-top,0px)) calc(20px + env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) calc(20px + env(safe-area-inset-left,0px));-webkit-font-smoothing:antialiased}
+    .shell{width:min(100%,448px);min-height:calc(100dvh - 45px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));margin:0 auto;display:flex;flex-direction:column}
+    .masthead{text-align:center;padding:5px 0 17px;border-bottom:1px solid rgba(227,214,175,.17)}
+    .wordmark{margin:0;color:var(--gold);font-size:15px;line-height:22px;font-weight:600;letter-spacing:.34em;padding-left:.34em}
+    .stage{flex:1}
+    .intro{text-align:center;padding:23px 4px 0}
+    .symbol{display:block;width:76px;height:76px;object-fit:cover;border-radius:50%;margin:0 auto 13px}
+    .eyebrow{margin:0 0 9px;color:var(--gold-deep);font-size:10px;line-height:15px;letter-spacing:.25em;font-weight:600;text-transform:uppercase}
+    h1{margin:0;color:var(--text);font:400 clamp(29px,7vw,35px)/1.16 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+    .intro-copy{margin:13px auto 0;color:var(--muted);font-size:14px;line-height:1.58;max-width:365px}
+    .panel{margin:23px auto 0;width:100%;padding:22px 22px 19px;background:linear-gradient(148deg,rgba(30,27,20,.95),rgba(12,11,9,.98));border:1px solid rgba(227,214,175,.27);border-radius:15px;box-shadow:0 14px 48px rgba(0,0,0,.28)}
+    .panel-title{font-size:15px;line-height:21px;font-weight:600;letter-spacing:.01em;margin:0 0 4px;color:var(--gold)}
+    .panel-subtitle{color:var(--muted);margin:0 0 16px;font-size:12.5px;line-height:19px}
+    .fields{display:grid;gap:12px}
+    .field-label{display:block;margin:0 0 6px;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;color:#CDC6B7}
+    .optional{font-weight:400;color:var(--dim)}
+    .field{display:block;width:100%;height:48px;padding:0 14px;border:1px solid #494132;border-radius:7px;background:var(--field);font:400 15px/22px var(--sans);color:var(--text);outline:none;appearance:none}
+    .field::placeholder{color:#8F8B81}
+    .field:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(227,214,175,.1)}
+    .field:disabled{opacity:.65}
+    .consent{font-size:11px;line-height:17px;color:var(--dim);margin:12px 0 13px}
+    .action{position:relative;display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;border:1px solid #EDDFBA;border-radius:8px;background:var(--gold);color:#15120D;font:600 12.5px/20px var(--sans);letter-spacing:.15em;text-transform:uppercase;touch-action:none;-webkit-tap-highlight-color:transparent;user-select:none;cursor:pointer;overflow:hidden}
+    .action:disabled{opacity:.52;cursor:not-allowed}
+    .action:not(:disabled):focus-visible{outline:2px solid white;outline-offset:3px}
+    .action.holding{background:#F1E6C9}
+    .progress{position:absolute;left:0;bottom:0;width:0;height:4px;background:#826D3D}
+    .action.holding .progress{width:100%;transition:width 1.2s linear}
+    .hold-note{margin:9px 0 0;text-align:center;color:var(--muted);font-size:11px;line-height:16px}
+    .status{min-height:0;margin:0;color:#E4C3A3;font-size:12px;line-height:19px;text-align:center}
+    .status:not(:empty){margin-top:11px}
+    .extra{margin:18px auto 0;border-top:1px solid rgba(227,214,175,.14);padding:16px 4px 0;color:var(--muted)}
+    .extra summary{cursor:pointer;text-align:center;list-style:none;font-size:12px;line-height:20px;color:#C4B89B;text-decoration:underline;text-decoration-color:#554B35;text-underline-offset:4px}
+    .extra summary::-webkit-details-marker{display:none}
+    .extra summary:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+    .extra-content{padding:14px 8px 0;font-size:12px;line-height:1.7;text-align:center}
+    .extra-content p{margin:0 0 10px}
+    .extra-content a,.footer a{color:var(--gold);text-underline-offset:3px}
+    .ref{font:11px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--gold-deep);overflow-wrap:anywhere}
+    .footer{margin:18px 0 0;text-align:center;font-size:11px;line-height:19px;color:var(--dim);padding:8px 0 0}
+    .footer a{color:#BDB29A;text-decoration:none}
+    .foot-sep{margin:0 10px;color:#5C5447}
+    .state{display:flex;min-height:63dvh;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 10px}
+    .state h1{max-width:350px}
+    .state .intro-copy{max-width:350px}
+    .state .action{max-width:320px;margin-top:25px;text-decoration:none}
+    [hidden]{display:none!important}
+    @media(max-width:360px){body{padding-left:15px;padding-right:15px}.panel{padding:19px 17px}.intro{padding-top:16px}.symbol{width:66px;height:66px}}
+    @media(min-height:820px){.intro{padding-top:29px}.panel{margin-top:27px}}
+    @media(prefers-reduced-motion:reduce){.progress,.action.holding .progress{transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead"><p class="wordmark">BELMARION</p></header>
+    <div class="stage">
+      <section id="loading" class="state">
+        <p class="eyebrow">Private introduction</p>
+        <h1>Preparing your introduction.</h1>
+        <p class="intro-copy">One moment, please.</p>
+      </section>
+      <section id="form" hidden>
+        <div class="intro">
+          <img class="symbol" src="/assets/brand/belmarion-gold-on-black-b6eaf61e0b.jpg" alt="" width="76" height="76">
+          <p class="eyebrow">Private consideration</p>
+          <h1>A private introduction.</h1>
+          <p class="intro-copy">Someone thought Belmarion might be of interest to you. If you would like to explore further, you can respond here in confidence.</p>
+        </div>
+        <div class="panel" role="group" aria-labelledby="panelTitle">
+          <p class="panel-title" id="panelTitle">Your preferred contact</p>
+          <p class="panel-subtitle">Your own details, or those of a representative.</p>
+          <div class="fields">
+            <div>
+              <label class="field-label" for="contactName">Contact name <span class="optional">· optional</span></label>
+              <input class="field" id="contactName" name="contactName" type="text" autocomplete="name" maxlength="120" placeholder="Full name">
+            </div>
+            <div>
+              <label class="field-label" for="contactRole">Role or office <span class="optional">· optional</span></label>
+              <input class="field" id="contactRole" name="contactRole" type="text" autocomplete="organization" maxlength="120" placeholder="If applicable">
+            </div>
+            <div>
+              <label class="field-label" for="email">Contact email <span aria-hidden="true">*</span></label>
+              <input class="field" id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required placeholder="name@example.com" aria-required="true">
+            </div>
+          </div>
+          <p class="consent">If providing someone else's details, please obtain their permission first. No obligation to proceed.</p>
+          <button id="submit" class="action" type="button" disabled>
+            <span id="submitLabel">Send my interest</span><span class="progress" aria-hidden="true"></span>
+          </button>
+          <p class="hold-note" id="holdNote">Enter an email to continue. Then press and hold to send.</p>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </div>
+        <details class="extra">
+          <summary>Prefer to speak through your private office?</summary>
+          <div class="extra-content">
+            <p>Your representative may write to <a href="mailto:private@belmarion.com">private@belmarion.com</a> or contact Signal <strong>belmarion_ops.01</strong>, quoting this reference:</p>
+            <p id="reference" class="ref"></p>
+          </div>
+        </details>
+      </section>
+      <section id="done" class="state" hidden>
+        <img class="symbol" src="/assets/brand/belmarion-gold-on-black-b6eaf61e0b.jpg" alt="" width="76" height="76">
+        <p class="eyebrow">Private consideration</p>
+        <h1>Thank you.</h1>
+        <p class="intro-copy">Your interest has been received. The Belmarion private office will reply through the contact you provided.</p>
+        <a href="https://belmarion.com" class="action">Discover Belmarion</a>
+      </section>
+      <section id="invalid" class="state" hidden>
+        <p class="eyebrow">Private consideration</p>
+        <h1>This introduction is no longer available.</h1>
+        <p class="intro-copy">Please ask the person who introduced you for a new private link.</p>
+      </section>
+      <section id="unavailable" class="state" hidden>
+        <p class="eyebrow">Private consideration</p>
+        <h1>Unable to open your introduction.</h1>
+        <p class="intro-copy">Your link remains unchanged. Check your connection and try again.</p>
+        <button type="button" id="retry" class="action">Try again</button>
+      </section>
+    </div>
+    <footer class="footer"><a href="https://belmarion.com">Discover Belmarion</a><span class="foot-sep">·</span><a href="https://belmarion.com/privacy.html">Privacy</a></footer>
+  </main>
+  <script>
+    (function () {
+      'use strict';
+      const ENDPOINT = 'https://nxjqyijykcnxlwoxanrb.supabase.co/functions/v1/belmarion-nomination';
+      const token = (new URLSearchParams(location.search).get('t') || '').trim().toLowerCase();
+      const sections = ['loading','form','done','invalid','unavailable'];
+      const form = document.getElementById('form');
+      const email = document.getElementById('email');
+      const submit = document.getElementById('submit');
+      const submitLabel = document.getElementById('submitLabel');
+      const holdNote = document.getElementById('holdNote');
+      const status = document.getElementById('status');
+      const progress = submit.querySelector('.progress');
+      let timer = null, committed = false;
+
+      function show(id) {
+        sections.forEach(function (section) { document.getElementById(section).hidden = section !== id; });
+      }
+      async function call(action, extra) {
+        const controller = new AbortController();
+        const deadline = setTimeout(function () { controller.abort(); }, 25000);
+        try {
+          const body = Object.assign({ action: action, token: token }, extra || {});
+          const response = await fetch(ENDPOINT, { method: 'POST', signal: controller.signal, cache: 'no-store', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+          const data = await response.json().catch(function () { return {}; });
+          if (!response.ok) {
+            const error = new Error(String(data.error || 'service_unavailable'));
+            error.status = response.status;
+            throw error;
+          }
+          return data;
+        } finally { clearTimeout(deadline); }
+      }
+      function emailValid() {
+        const value = email.value.trim();
+        return value.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+      function syncButton() {
+        submit.disabled = committed || !emailValid();
+        holdNote.textContent = emailValid() ? 'Press and hold for 1.2 seconds to send.' : 'Enter an email to continue. Then press and hold to send.';
+      }
+      function resetHold() {
+        if (timer !== null) clearTimeout(timer);
+        timer = null;
+        submit.classList.remove('holding');
+        progress.style.transition = 'none';
+        progress.style.width = '0';
+        void progress.offsetWidth;
+        progress.style.transition = '';
+      }
+      async function commit() {
+        if (committed || submit.disabled) return;
+        committed = true;
+        resetHold();
+        form.querySelectorAll('input').forEach(function (input) { input.disabled = true; });
+        submit.disabled = true;
+        submitLabel.textContent = 'Sending...';
+        holdNote.textContent = '';
+        status.textContent = '';
+        try {
+          await call('submit_contact', {
+            contactEmail: email.value.trim().toLowerCase(),
+            contactName: document.getElementById('contactName').value.trim(),
+            contactRole: document.getElementById('contactRole').value.trim()
+          });
+          show('done');
+        } catch (error) {
+          committed = false;
+          form.querySelectorAll('input').forEach(function (input) { input.disabled = false; });
+          submitLabel.textContent = 'Send my interest';
+          syncButton();
+          status.textContent = String(error.message).includes('contact_not_valid') ? 'Please check the email address.' : 'We could not confirm your response. Please try again.';
+        }
+      }
+      function beginHold(event) {
+        if (submit.disabled || committed) return;
+        event.preventDefault();
+        resetHold();
+        submit.classList.add('holding');
+        requestAnimationFrame(function () { progress.style.width = '100%'; });
+        timer = setTimeout(function () { void commit(); }, 1200);
+      }
+      function cancelHold() { if (!committed) resetHold(); }
+      email.addEventListener('input', function () { status.textContent = ''; syncButton(); });
+      submit.addEventListener('pointerdown', beginHold);
+      ['pointerup','pointercancel','pointerleave','blur'].forEach(function (name) { submit.addEventListener(name, cancelHold); });
+      submit.addEventListener('contextmenu', function (event) { event.preventDefault(); });
+      submit.addEventListener('keydown', function (event) { if ((event.key === ' ' || event.key === 'Enter') && !event.repeat) beginHold(event); });
+      submit.addEventListener('keyup', function (event) { if (event.key === ' ' || event.key === 'Enter') cancelHold(); });
+      document.addEventListener('visibilitychange', function () { if (document.hidden) cancelHold(); });
+
+      async function open() {
+        if (!/^[0-9a-f]{48}$/.test(token)) { show('invalid'); return; }
+        show('loading');
+        try {
+          const data = await call('open');
+          document.getElementById('reference').textContent = String(data.reference || '');
+          syncButton();
+          show('form');
+        } catch (error) {
+          show ([400,401,404,409,410].includes(error.status) ? 'invalid' : 'unavailable');
+        }
+      }
+      document.getElementById('retry').addEventListener('click', function () { void open(); });
+      void open();
+    })();
+  </script>
+</body>
+</html>
