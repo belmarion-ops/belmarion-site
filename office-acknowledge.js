@@ -12,7 +12,7 @@
   const message=(text,kind='info')=>{
     status.hidden=false;
     status.textContent=text;
-    status.style.color=kind==='error'?'#f2b4a8':'#c6c2b9';
+    status.style.color=kind==='error'?'#F2EDE3':'#F2EDE3';
   };
   const showSuccess=()=>{
     form.hidden=true; error.hidden=true;
@@ -78,4 +78,5 @@
     }
   });
 })();
+
 
