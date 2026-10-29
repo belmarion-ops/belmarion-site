@@ -102,7 +102,12 @@
 .menu .founding-option strong{font-weight:700}
 .menu .founding-option span{font-weight:400;font-size:12px;line-height:18px;letter-spacing:.04em;color:var(--quiet)}
 
-/* Supplied membership artwork: preserve the full image at every viewport size. */
-.membership-platforms{width:min(100%,720px);margin:32px auto 0}
-.membership-platforms img{display:block;width:100%;height:auto}
+/* Crop the duplicate tagline from the top 220px of the supplied platform artwork. */
+.membership-platforms{width:min(100%,720px);margin:32px auto 0;aspect-ratio:1686/904;overflow:hidden;position:relative}
+.membership-platforms img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
 
+
+/* One complete, unbroken brand tagline on every viewport. */
+.brand-tagline{display:block;max-width:100%;white-space:nowrap;overflow-wrap:normal!important;word-break:normal;font:400 clamp(9px,2.6vw,14px)/1.5 var(--sans);letter-spacing:clamp(.03em,.22vw,.1em);color:var(--accent);text-align:center}
+.brand .brand-tagline{margin-top:14px}
+.founding-invitation .brand-tagline{margin-top:8px}
