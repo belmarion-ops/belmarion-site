@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "62c02004e5f0d422c7260c5a0d4b27c041acddf4",
+  "note": "Discovery inventory only; no editing or publishing authority is derived from this file.",
+  "pages": [
+    {
+      "path": "index.html",
+      "label": "Home",
+      "classification": "public"
+    },
+    {
+      "path": "membership.html",
+      "label": "Membership",
+      "classification": "public"
+    },
+    {
+      "path": "purpose.html",
+      "label": "Purpose",
+      "classification": "public"
+    },
+    {
+      "path": "communicate.html",
+      "label": "Communicate",
+      "classification": "public",
+      "caution": "Preserve form and support routing."
+    },
+    {
+      "path": "legal-compliance.html",
+      "label": "Legal and compliance",
+      "classification": "public",
+      "caution": "Legal-content warning required."
+    },
+    {
+      "path": "privacy.html",
+      "label": "Privacy",
+      "classification": "public",
+      "caution": "Legal-content warning required."
+    },
+    {
+      "path": "founding-beta.html",
+      "label": "Founding beta",
+      "classification": "protected-pending-review"
+    },
+    {
+      "path": "founding-circle.html",
+      "label": "Founding circle",
+      "classification": "protected-pending-review"
+    },
+    {
+      "path": "nomination/index.html",
+      "label": "Nomination",
+      "classification": "protected-operational"
+    },
+    {
+      "path": "office-acknowledge.html",
+      "label": "Office acknowledgement",
+      "classification": "protected-operational"
+    },
+    {
+      "path": "office-dossier.html",
+      "label": "Office dossier",
+      "classification": "protected-operational"
+    },
+    {
+      "path": "office-receipt.html",
+      "label": "Office receipt",
+      "classification": "protected-operational"
+    }
+  ]
+}
