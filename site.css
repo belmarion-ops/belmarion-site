@@ -111,3 +111,5 @@
 .brand-tagline{display:block;max-width:100%;white-space:nowrap;overflow-wrap:normal!important;word-break:normal;font:400 clamp(9px,2.6vw,14px)/1.5 var(--sans);letter-spacing:clamp(.03em,.22vw,.1em);color:var(--accent);text-align:center}
 .brand .brand-tagline{margin-top:14px}
 .founding-invitation .brand-tagline{margin-top:8px}
+
+.interest-cta{text-align:center;width:100%;border-top:1px solid #303735;padding:24px 10px;color:#e8ebe6;font:13px/1.6 Arial,sans-serif}.interest-cta a{margin-left:10px;color:inherit;text-decoration:underline}
