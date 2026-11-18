@@ -1,0 +1,91 @@
+.perspectives {
+  width: min(100%, 1180px);
+  margin: clamp(56px, 8vw, 104px) auto 0;
+  padding: clamp(42px, 6vw, 74px) 0;
+  border-block: 1px solid #303030;
+  color: #f2ede3;
+}
+
+.perspectives-intro {
+  margin-bottom: clamp(30px, 5vw, 52px);
+  text-align: center;
+}
+
+.perspectives-intro h2 {
+  margin: 0 auto 14px;
+  font: 400 clamp(18px, 3vw, 30px)/1.35 Georgia, serif;
+  letter-spacing: .12em;
+  text-wrap: balance;
+}
+
+.perspectives-intro p {
+  margin: 0;
+  color: #cfc8bc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.perspectives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 42px);
+}
+
+.perspective img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.perspective h3 {
+  margin: 22px 0 5px;
+  color: #fff;
+  font: 400 clamp(20px, 2.2vw, 28px)/1.22 Georgia, serif;
+}
+
+.perspective-theme {
+  margin: 0;
+  color: #cfc8bc;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.perspective blockquote {
+  margin: 19px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid #303030;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.perspective blockquote p {
+  margin: 0 0 12px;
+}
+
+.perspective blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.home > .statutory .perspectives-footer-note {
+  max-width: 48ch;
+  margin: 13px auto 0;
+  padding-inline: 16px;
+  color: #cfc8bc;
+  font: 400 11px/1.5 var(--sans);
+}
+
+@media (max-width: 760px) {
+  .perspectives-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 460px;
+    margin-inline: auto;
+    gap: 36px;
+  }
+
+  .perspective + .perspective {
+    padding-top: 36px;
+    border-top: 1px solid #303030;
+  }
+}
