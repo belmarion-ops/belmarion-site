@@ -7,7 +7,7 @@
 .menu a{max-width:100%;overflow-wrap:break-word}.home,.page{min-height:100dvh}.page-inner{min-height:calc(100dvh - 56px - var(--safe-top) - var(--safe-bottom))}
 
 /* Cinematic introduction: opt-in playback, responsive layout, native accessible controls. */
-.film-intro{width:min(100%,720px);margin:38px auto 4px}.film-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px}.film-heading h2,.film-heading span{margin:0;color:var(--muted);font:400 10px/18px var(--mono);letter-spacing:.17em}.film-player{display:block;width:100%;aspect-ratio:16/9;background:#070707;object-fit:contain;border:1px solid #3c3c3c;border-radius:2px}.film-player:focus-visible{outline:1px solid var(--white);outline-offset:5px}.film-intro+.menu{margin-top:22px}@media(max-width:480px){.film-intro{margin-top:32px}.film-heading h2,.film-heading span{font-size:9px}}
+.film-intro{width:min(100%,720px);margin:38px auto 4px}.film-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 12px}.film-heading h2,.film-heading span{margin:0;color:var(--muted);font:400 12px/18px var(--mono);letter-spacing:.17em}.film-player{display:block;width:100%;aspect-ratio:16/9;background:#070707;object-fit:contain;border:1px solid #3c3c3c;border-radius:2px}.film-player:focus-visible{outline:1px solid var(--white);outline-offset:5px}.film-intro+.menu{margin-top:22px}@media(max-width:480px){.film-intro{margin-top:32px}.film-heading h2,.film-heading span{font-size:11px}}
 
 /* Statutory footers: consistent, quiet monochrome treatment on every public page. */
 .home > .statutory{width:calc(100% + 32px);max-width:min(calc(100vw - 16px),720px);padding:40px 0 4px;font-size:clamp(7px,2.2vw,8px);line-height:1.85}
@@ -112,7 +112,7 @@
 .brand .brand-tagline{margin-top:14px}
 .founding-invitation .brand-tagline{margin-top:8px}
 
-.interest-cta{text-align:center;width:100%;border-top:1px solid #303735;padding:24px 10px;color:#e8ebe6;font:13px/1.6 Arial,sans-serif}.interest-cta a{margin-left:10px;color:inherit;text-decoration:underline}
+.interest-cta{text-align:center;width:100%;border-top:1px solid #303735;padding:24px 10px;color:#e8ebe6;font:16px/1.6 var(--sans)}.interest-cta a{margin-left:10px;color:inherit;text-decoration:underline}
 
 /* Social profile links — restrained, accessible icons above public footers. */
 .social-links{display:flex;align-items:center;justify-content:center;gap:18px;width:100%;margin:0 auto 18px;padding:0}
@@ -123,5 +123,7 @@
 @media(prefers-reduced-motion:reduce){.social-links a{transition:none}}
 
 /* Home navigation: pale-gold links with generous letter spacing. */
-.menu a{letter-spacing:.30em;color:#E6D4AD}
+.menu a{font-size:17px;line-height:1.45;letter-spacing:.28em;color:#E6D4AD}
 .menu a:hover,.menu a:focus-visible{color:#F7EAD0}
+
+@media(min-width:768px){.menu a{font-size:18px}}

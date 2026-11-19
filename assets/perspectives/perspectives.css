@@ -13,7 +13,7 @@
 
 .perspectives-intro h2 {
   margin: 0 auto 14px;
-  font: 400 clamp(18px, 3vw, 30px)/1.35 Georgia, serif;
+  font: 400 clamp(21px, 3vw, 30px)/1.35 Georgia, serif;
   letter-spacing: .12em;
   text-wrap: balance;
 }
@@ -21,8 +21,8 @@
 .perspectives-intro p {
   margin: 0;
   color: #cfc8bc;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
 }
 
 .perspectives-grid {
@@ -42,22 +42,22 @@
 .perspective h3 {
   margin: 22px 0 5px;
   color: #fff;
-  font: 400 clamp(20px, 2.2vw, 28px)/1.22 Georgia, serif;
+  font: 400 clamp(22px, 2.2vw, 28px)/1.22 Georgia, serif;
 }
 
 .perspective-theme {
   margin: 0;
   color: #cfc8bc;
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .perspective blockquote {
   margin: 19px 0 0;
   padding-top: 16px;
   border-top: 1px solid #303030;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .perspective blockquote p {
