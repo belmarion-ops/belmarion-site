@@ -121,3 +121,7 @@
 .social-links a:focus-visible{outline:2px solid #F2EDE3;outline-offset:4px;opacity:1}
 .social-links svg{width:17px;height:17px;display:block;fill:currentColor}
 @media(prefers-reduced-motion:reduce){.social-links a{transition:none}}
+
+/* Home navigation: pale-gold links with generous letter spacing. */
+.menu a{letter-spacing:.30em;color:#E6D4AD}
+.menu a:hover,.menu a:focus-visible{color:#F7EAD0}
